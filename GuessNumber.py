@@ -14,10 +14,10 @@ fw = open("last.txt","a")
 #登录部分
 
 print('登录猜数')
-uesr = input('用户名:')
+user = input('用户名:')
 
-if os.path.exists('uesr.txt'):#第一层如果，检测是否存在“uesr.txt”
-    with open('uesr.txt', 'r', encoding='utf-8') as f:
+if os.path.exists('user.txt'):#第一层如果，检测是否存在“uesr.txt”
+    with open('user.txt', 'r', encoding='utf-8') as f:
         usdata = f.readline()
 
         if uesr == usdata:#第二层如果，检测是否与用户名相同
@@ -43,7 +43,7 @@ if os.path.exists('uesr.txt'):#第一层如果，检测是否存在“uesr.txt�
             os.system('pause')
             exit()
 else:
-    with open("uesr.txt", mode='a', encoding='utf-8') as f:
+    with open("user.txt", mode='a', encoding='utf-8') as f:
         f.write('admin')
         print('未检测到文件，正在创建中......请重启猜数')
         time.sleep(2)
@@ -66,14 +66,14 @@ while 机会 > 0:
             print('大了，小点')
         机会 = 机会 - 1
 
-fw.write('\n结果是:' + str(answer))
+fw.write('\n结果answer是:' + str(answer))
 print('游戏结束^_^Game Over^_^')
 time.sleep(2)
 print('----------------------------------')
 print('剩余机会:', 机会)
-print('答案:' , answer)
-print('最后的回答:' , guess)
-print('版本:1.3Beta')
+print('答案answer:' , answer)
+print('最后的回答user answer:' , guess)
+print('版本version:1.3Beta')
 print('----------------------------------')
 
 numbers= [answer]
