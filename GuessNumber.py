@@ -6,7 +6,7 @@ from os import system
 机会 = random.randint(4,8)
 answer = random.randint(1,20)
 
-system("title 猜数1.2Beta -by dyf189")
+system("title 猜数1.3Beta -by dyf189")
 
 fw = open("last.txt","a")
 
@@ -73,7 +73,7 @@ print('----------------------------------')
 print('剩余机会:', 机会)
 print('答案:' , answer)
 print('最后的回答:' , guess)
-print('版本:1.2Beta')
+print('版本:1.3Beta')
 print('----------------------------------')
 
 numbers= [answer]
