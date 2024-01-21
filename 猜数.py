@@ -12,15 +12,15 @@ fw = open("last.txt","a")
 
 #系统检测部分
 
-youos = os.name
-if youos == 'nt':
-    xitong = 'win'
-elif youos == 'win32':
-      xitong = 'win'
-elif youos == 'win64':
-      xitong = 'win'
-elif youos == 'linux':
-      xitong = 'GNU'
+系统 = os.name
+if 系统 == 'nt':
+    系统 = 'win'
+elif 系统 == 'win32':#win32
+      系统 = 'win'
+elif 系统 == 'win64':
+      系统 = 'win'
+elif 系统 == 'linux':
+      系统 = 'GNU'
 else:
    print('抱歉，您的系统不支持猜数。')
    time.sleep(3)
@@ -97,9 +97,9 @@ print('----------------------------------')
 
 #结尾等待部分
 
-if xitong == 'win':
+if 系统 == 'win':
     os.system('pause')
-elif xitong == 'GNU':
+elif 系统 == 'GNU':
     os.system('sleep 5')
 else:
     exit()
