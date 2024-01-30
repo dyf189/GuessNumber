@@ -75,7 +75,7 @@ while 机会 > 0:
     temp = input('我们玩个游戏，猜一猜，这个数字是在1到20之间的:')
     if isinstance(temp , int):
         print('请输入一个整数')
-        os.system('pause')
+        continue
     else:
         guess = int(temp)
 
