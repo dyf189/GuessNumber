@@ -2,6 +2,7 @@
 import random
 import os
 import time
+import re
 from os import system
 机会 = random.randint(4,8)
 answer = random.randint(1,20)
@@ -73,10 +74,7 @@ input('____________________________________________________')
 
 while 机会 > 0:
     temp = input('我们玩个游戏，猜一猜，这个数字是在1到20之间的:')
-    if isinstance(temp , int):
-        print('请输入一个整数')
-        continue
-    else:
+    if re.match(r"^-?\d+$", temp):
         guess = int(temp)
 
         if guess == answer:
@@ -89,6 +87,9 @@ while 机会 > 0:
             else:
                 print('大了，小点')
                 机会 = 机会 - 1
+    else:
+        print('请输入一个整数')
+        continue
 
 
 #结尾清算部分
