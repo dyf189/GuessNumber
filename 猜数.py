@@ -63,23 +63,32 @@ else:
         print('未检测到文件，正在创建中......请重启猜数')
         time.sleep(2)
         exit()
+
+
+#选择部分
+
+input('____________________________________________________')
     
 #猜数部分
 
 while 机会 > 0:
     temp = input('我们玩个游戏，猜一猜，这个数字是在1到20之间的:')
-    guess = int(temp)
-
-    if guess == answer:
-        print('厉害啊，你是不是偷看代码了 good!')
-        print('我先溜了，不玩了，别想要奖品')
-        break
+    if isinstance(temp , int):
+        print('请输入一个整数')
     else:
-        if guess < answer:
-            print('太小了，大胆一点')
+        guess = int(temp)
+
+        if guess == answer:
+            print('厉害啊，你是不是偷看代码了 good!')
+            print('我先溜了，不玩了，别想要奖品')
+            break
         else:
-            print('大了，小点')
-        机会 = 机会 - 1
+            if guess < answer:
+                print('太小了，大胆一点')
+            else:
+                print('大了，小点')
+                机会 = 机会 - 1
+
 
 #结尾清算部分
 
