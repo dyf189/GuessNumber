@@ -68,13 +68,24 @@ else:
 
 #选择部分
 
-input('____________________________________________________')
-    
+temp = input('_____________________________________\n 请选择模式：\n 1：游玩 2：查看记录 3：用户数据 \n如果不想登录或不想看到此消息？请输入4\n空格默认为1\n')
+if temp == '1':
+    pass
+elif temp == '2':
+      print('抱歉，功能未实现')
+elif temp == '3':
+      print('抱歉，功能未实现')
+elif temp == '4':
+      print('抱歉，功能未实现')
+else:
+    pass
+
+
 #猜数部分
 
 while 机会 > 0:
-    temp = input('我们玩个游戏，猜一猜，这个数字是在1到20之间的:')
-    if re.match(r"^-?\d+$", temp):
+    temp = input('我们玩个游戏，猜一猜，这个数字是在1到20之间的:')#初始化，输入数值以猜测
+    if re.match(r"^-?\d+$", temp):#判断是否为整数值，如果是，进行判断
         guess = int(temp)
 
         if guess == answer:
@@ -84,10 +95,11 @@ while 机会 > 0:
         else:
             if guess < answer:
                 print('太小了，大胆一点')
+                机会 = 机会-1
             else:
                 print('大了，小点')
                 机会 = 机会 - 1
-    else:
+    else:#否则进行提示，并结束本次循环
         print('请输入一个整数')
         continue
 
