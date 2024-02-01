@@ -74,7 +74,18 @@ if temp == '1':
 elif temp == '2':
       print('抱歉，功能未实现')
 elif temp == '3':
-      print('抱歉，功能未实现')
+      print('用户名:' , usdata , '\n密码:', pwdata)
+      temp = input('修改密码请输入1\n修改用户名请输入2\n空格默认进行游玩\n')
+      if temp == '1':
+          input('请输入密码:')
+          with open('password.txt', 'w', encoding='utf-8') as pw:
+              pw.write(temp)
+      elif temp == '2':
+            input('请输入用户名')
+            with open('uesr.txt', 'w', encoding='utf-8') as f:
+                f.write(temp)
+      else:
+          pass
 elif temp == '4':
       print('抱歉，功能未实现')
 else:
