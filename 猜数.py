@@ -67,29 +67,31 @@ else:
 
 
 #选择部分
-
-temp = input('_____________________________________\n 请选择模式：\n 1：游玩 2：查看记录 3：用户数据 \n如果不想登录或不想看到此消息？请输入4\n空格默认为1\n')
-if temp == '1':
-    pass
-elif temp == '2':
-      print('抱歉，功能未实现')
-elif temp == '3':
-      print('用户名:' , usdata , '\n密码:', pwdata)
-      temp = input('修改密码请输入1\n修改用户名请输入2\n空格默认进行游玩\n')
-      if temp == '1':
+while True:
+    temp = input('_____________________________________\n 请选择模式：\n 1：游玩 2：查看记录 3：用户数据 \n如果不想登录或不想看到此消息？请输入4\n空格默认为1\n')
+    if temp == '1':
+        break
+    elif temp == '2':
+        print('抱歉，功能未实现')
+    elif temp == '3':#查看用户数据，可修改密码、用户名
+        print('用户名:' , usdata , '\n密码:', pwdata)
+        temp = input('修改密码请输入1\n修改用户名请输入2\n空格默认进行游玩\n')
+        if temp == '1':
           temp = input('请输入密码:')
+          print('修改成功！')
           with open('password.txt', 'w', encoding='utf-8') as pw:
               pw.write(temp)
-      elif temp == '2':
+        elif temp == '2':
             temp = input('请输入用户名')
+            print('修改成功！')
             with open('uesr.txt', 'w', encoding='utf-8') as f:
                 f.write(temp)
-      else:
-          pass
-elif temp == '4':
-      print('抱歉，功能未实现')
-else:
-    pass
+        else:
+            break
+    elif temp == '4':
+        print('抱歉，功能未实现')
+    else:
+        break
 
 
 #猜数部分
