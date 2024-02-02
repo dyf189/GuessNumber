@@ -6,6 +6,8 @@ import re
 from os import system
 
 system("title 猜数1.3Beta -by dyf189")
+难度 = '简单'
+最高 = '20'
 
 fw = open("last.txt","a")
 
@@ -91,9 +93,9 @@ while True:
         if temp == '1':
             难度 = '简单'
         elif temp == '2':
-            难度 = '普通'
-        else:
-            难度 = '困难'
+              难度 = '普通'
+        elif temp == '3':
+              难度 = '困难'
     elif temp =='5':
         print('抱歉，功能未实现')
     else:
@@ -104,12 +106,15 @@ while True:
 if 难度 == '简单':
   机会 = random.randint(4,8)
   answer = random.randint(1,20)
+  最高 ='20'
 elif 难度 == '普通':
     机会 = random.randint(10,14)
     answer = random.randint(1,50)
+    最高 = '50' 
 elif 难度 ==  '困难':
     机会 = random.randint(18,24)
     answer = random.randint(1,100)
+    最高 = '100'
 elif 难度 == '彩蛋':
     机会 = random.randint(1,100)
     answer = random.randint(114514,200000)
@@ -117,7 +122,7 @@ elif 难度 == '彩蛋':
 jihui = 机会
 while 机会 > 0:
     if 机会 == jihui:
-      temp = input('我们玩个游戏，猜一猜，这个数字是在1到20之间的:')#初始化，输入数值以猜测
+      temp = input('我们玩个游戏，猜一猜，这个数字是在1到' + str(最高) + '之间的：')#初始化，输入数值以猜测
     else:
         temp = input('请输入一个数：')
 
