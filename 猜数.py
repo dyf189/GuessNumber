@@ -4,8 +4,6 @@ import os
 import time
 import re
 from os import system
-机会 = random.randint(4,8)
-answer = random.randint(1,20)
 
 system("title 猜数1.3Beta -by dyf189")
 
@@ -68,7 +66,7 @@ else:
 
 #选择部分
 while True:
-    temp = input('_____________________________________\n 请选择模式：\n 1：游玩 2：查看记录 3：用户数据 \n如果不想登录或不想看到此消息？请输入4\n空格默认为1\n')
+    temp = input('_____________________________________\n 请选择模式：\n 1：游玩 2：查看记录 3：用户数据 4:切换游戏难度\n如果不想登录或不想看到此消息？请输入5\n空格默认为1\n')
     if temp == '1':
         break
     elif temp == '2':
@@ -89,22 +87,56 @@ while True:
         else:
             break
     elif temp == '4':
+        temp == input('简单：随机数1-20，4-8次机会\n普通：随机数1-50，10-14次机会\n困难：随机数1-100，18-24次机会\n默认简单，请输入难度代表数字：')
+        if temp == '1':
+            难度 = '简单'
+        elif temp == '2':
+            难度 = '普通'
+        else:
+            难度 = '困难'
+    elif temp =='5':
         print('抱歉，功能未实现')
     else:
         break
 
 
 #猜数部分
+if 难度 == '简单':
+  机会 = random.randint(4,8)
+  answer = random.randint(1,20)
+elif 难度 == '普通':
+    机会 = random.randint(10,14)
+    answer = random.randint(1,50)
+elif 难度 ==  '困难':
+    机会 = random.randint(18,24)
+    answer = random.randint(1,100)
+elif 难度 == '彩蛋':
+    机会 = random.randint(1,100)
+    answer = random.randint(114514,200000)
 
+jihui = 机会
 while 机会 > 0:
-    temp = input('我们玩个游戏，猜一猜，这个数字是在1到20之间的:')#初始化，输入数值以猜测
+    if 机会 == jihui:
+      temp = input('我们玩个游戏，猜一猜，这个数字是在1到20之间的:')#初始化，输入数值以猜测
+    else:
+        temp = input('请输入一个数：')
+
+
     if re.match(r"^-?\d+$", temp):#判断是否为整数值，如果是，进行判断
         guess = int(temp)
 
         if guess == answer:
-            print('厉害啊，你是不是偷看代码了 good!')
-            print('我先溜了，不玩了，别想要奖品')
-            break
+            结果文字 = random.randint(1,3)
+            if 结果文字 == 1:
+              print('厉害啊，你是不是偷看代码了 good!')
+              print('我先溜了，不玩了，别想要奖品')
+              break
+            elif 结果文字 == 2:
+                print('游戏结束了，恭喜你猜对了!')
+                break
+            elif 结果文字 == 3:
+                print('Game Over.\nThank you play this game.')
+                break
         else:
             if guess < answer:
                 print('太小了，大胆一点')
