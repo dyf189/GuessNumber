@@ -5,7 +5,7 @@ import time
 import re
 from os import system
 
-system("title 猜数1.3Beta -by dyf189")
+system("title 猜数1.4Beta -by dyf189")
 难度 = '简单'
 最高 = '20'
 
@@ -89,7 +89,7 @@ while True:
         else:
             break
     elif temp == '4':
-        temp == input('简单：随机数1-20，4-8次机会\n普通：随机数1-50，10-14次机会\n困难：随机数1-100，18-24次机会\n默认简单，请输入难度代表数字：')
+        temp = input('简单：随机数1-20，4-8次机会\n普通：随机数1-50，10-14次机会\n困难：随机数1-100，18-24次机会\n默认简单，请输入难度代表数字：')
         if temp == '1':
             难度 = '简单'
         elif temp == '2':
