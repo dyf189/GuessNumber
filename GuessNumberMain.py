@@ -44,6 +44,10 @@ if os.path.exists('uesr.txt'):#第一层如果，检测是否存在“uesr.txt�
         usdata = f.readline()
 
         if uesr == usdata:#第二层如果，检测是否与用户名相同
+            if usdata == '':
+                print('空用户名将会导致无法在线游玩')
+            else:
+                pass
             password = input('密码:')
             if os.path.exists('password.txt'):#第三层，检测是否存在“password.txt”
                 with open('password.txt', 'r', encoding='utf-8') as pw:
@@ -133,6 +137,7 @@ elif 难度 == '彩蛋':
     answer = random.randint(114514,200000)
 
 if mode == 'Web':
+  GuessNumberWeb.dl(usdata)
   GuessNumberWeb.nd('1','20')
   
 
