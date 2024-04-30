@@ -29,6 +29,8 @@ elif 系统 == 'win64':
       系统 = 'win'
 elif 系统 == 'linux':
       系统 = 'GNU'
+elif 系统 == 'posix':
+      系统 = 'GNU'
 else:
    print('抱歉，您的系统不支持猜数。')
    time.sleep(3)
@@ -138,8 +140,7 @@ elif 难度 == '彩蛋':
 
 if mode == 'Web':
   GuessNumberWeb.dl(usdata)
-  GuessNumberWeb.nd('1','20')
-  
+
 
 
 jihui = 机会

@@ -1,4 +1,5 @@
 import socket
+import os
 
 client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 client_socket.connect(('localhost', 4514))
@@ -27,7 +28,10 @@ def dl(name):
     接收信息 = client_socket.recv(1024).decode('utf-8')
     while True:
         if 接收信息 == 'true':
+            print('发送成功')
+            os.system('pause')
             break
         else:
-            client_socket.send(name.encode('utf-8'))
+            print('发送失败，请检查网络或在 https://github.com/dyf189/GuessNumber 报issuse')
             接收信息 = client_socket.recv(1024).decode('utf-8')
+            os.system('pause')
